@@ -7,7 +7,7 @@
 #define LED_CLOCK 9
 #define LED_DATA 7
 #define NUM_LEDS 30
-#define LED_DATA_RATE_MHZ 20
+// #define LED_DATA_RATE_MHZ 20
 
 // #include <FastLED.h>
 // CRGB leds[NUM_LEDS];
@@ -47,6 +47,6 @@ void loop()
 
     // FastLED.show();
     uint64_t end = esp_timer_get_time();
-    Serial.printf("Sample: %llu\n", end - start);
+    Serial.printf("Speed: %d mhz, Sample: %llu\n", CONFIG_LMTZ_APA102_CLOCK_SPEED / 1000000, end - start);
     delay(1000);
 }
