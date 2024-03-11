@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "esp_timer.h"
+#include "driver/spi_common.h"
 
 #define FASTLED_ALL_PINS_HARDWARE_SPI
 #define FASTLED_ESP32_SPI_BUS FSPI
@@ -47,6 +48,7 @@ void loop()
 
     // FastLED.show();
     uint64_t end = esp_timer_get_time();
+
     Serial.printf("Speed: %d mhz, Sample: %llu\n", CONFIG_LMTZ_APA102_CLOCK_SPEED / 1000000, end - start);
     delay(1000);
 }

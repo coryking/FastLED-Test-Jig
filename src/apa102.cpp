@@ -70,6 +70,8 @@ static int apa102_init(int n)
     }
 
     // Make sure this call succeeds
+    int freq = 0;
+    
     ret = spi_bus_add_device(APA102.spi_host, &APA102.dev_config, &APA102.device);
     if (ret != ESP_OK)
     {
